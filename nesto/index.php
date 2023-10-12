@@ -7,13 +7,13 @@
 </head>
 <body>
     <?php
-        $ime = $email = $broj = $reci = $poruka = $ime_greska = $email_greska = $broj_greska = "";
-        $recenica = "Sada pocinjemo da ucimo PHP skriptni serverski jezik.";
-        $reci = count(explode(" ", $recenica));
+        $ime = $email = $broj = $reci = $poruka = $film = $termin = $ime_greska = $email_greska = $broj_greska = "";
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $ime = $_POST["ime"];
             $email = $_POST["email"];
             $broj = $_POST["broj"];
+            $film = $_POST["film"];
+            $termin = $_POST["termin"];
 
             if(empty($ime)){
                 $ime_greska = "Morate uneti ime!";
@@ -52,7 +52,7 @@
             }
 
             if(empty($ime_greska) && empty($email_greska) && empty($broj_greska)){
-                $poruka = "Postovani " . $ime . " uspesno ste rezervisali ulaznicu za bioskop. Ulaznica ce stici na Vas email: " . $email . ". Datum i vreme rezervacije: " . date("d.m.Y.") . " - " . date("H:i");
+                $poruka = "Izvrsena je rezervacija na ime " . $ime . ", za film " . $film . " u terminu " . $termin . ". Broj sedista je " . $broj;
             }
         }
     ?>
@@ -67,13 +67,22 @@
         <input type="text" name="email" value="<?php echo $email; ?>">
         <p><?php echo $email_greska; ?></p><br><br>
 
+        <label for="film">Film:</label>
+        <input type="radio" name="film" value="Film 1"><label for="film">Film 1:</label><br>
+        <input type="radio" name="film" value="Film 2"><label for="film">Film 2:</label><br>
+        <input type="radio" name="film" value="Film 3"><label for="film">Film 3:</label><br><br>
+
+        <label for="termin">Termin:</label>
+        <input type="radio" name="termin" value="18:00"><label for="termin">18:00</label><br>
+        <input type="radio" name="termin" value="20:00"><label for="film">20:00</label><br>
+        <input type="radio" name="termin" value="22:00"><label for="film">22:00</label><br><br>
+
         <label for="broj">Broj sedista:</label>
         <input type="text" name="broj" value="<?php echo $broj; ?>">
         <p><?php echo $broj_greska; ?></p><br><br>
 
-        <input type="submit" value="Registruj se">
+        <input type="submit" value="Rezervisi">
     </form><br><br>
     <p><?php echo $poruka; ?></p><br><br>
-    <p><?php echo "Recenica ima " . $reci . " reci."; ?></p>
 </body>
 </html>
