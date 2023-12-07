@@ -14,7 +14,8 @@
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $filmErr = $vremeErr = "";
-$name = $email = $film = $vreme = "";
+$name = $email = $film = $vreme = $tabela = "";
+include "konekcija.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -34,6 +35,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   $film = $_POST["film"];
   $vreme = $_POST["vreme"];
+
+  if(empty($nameErr) && empty($emailErr) && empty($filmErr) && empty($vremeErr)){
+    
+    $sql = "INSERT INTO rezervacije
+      VALUES ('$email', '$name', '$film', '$vreme')";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "Vrednosti uspesno upisane";
+    } else {
+      echo "Error inserting values: " . $conn->error;
+    }
+
+  }
+  
+}
+
+$sql = "SELECT * FROM rezervacije";
+$result = $conn->query($sql);
+
+if($result->num_rows > 0){
+  while($row = $result->fetch_assoc()){
+    $tabela .= "<tr>
+      <td>" . $row["email"] . "</td>
+      <td>" . $row["name"] . "</td>
+      <td>" . $row["film"] . "</td>
+      <td>" . $row["vreme"] . "</td>
+    </tr>";
+  }
+}
+else{
+  $tabela = "";
 }
 
 function test_input($data) {
@@ -66,8 +98,20 @@ function test_input($data) {
   <input type="submit" name="submit" value="Rezervisi">  
 </form>
 
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Film</th>
+    <th>Vreme</th>
+  </tr>
+  <?php
+    echo $tabela; 
+  ?>
+</table>
+
 <?php
-  if (isset($_POST['submit']) && empty($nameErr) && empty($colorErr) && empty($robotErr)){
+  /*if (isset($_POST['submit']) && empty($nameErr) && empty($colorErr) && empty($robotErr)){
     $receiver = $email;
     $subject = "Bioskop";
     $body = "Postovani " . $name . " rezervali ste kartu za film " . $film . " u " . $vreme . ".";
@@ -80,7 +124,7 @@ function test_input($data) {
         echo 'ne radi';
     }
   }
-  
+  */
 ?>
 
 </body>
