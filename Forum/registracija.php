@@ -71,6 +71,7 @@
                         "email" => $email,
                         "username" => $username,
                     );
+                    header('Location:http://www.dimitrijeradojkovic.com/Forum/index.php');
                 }
                 else{
                     echo "Greska pri unosu u bazu";

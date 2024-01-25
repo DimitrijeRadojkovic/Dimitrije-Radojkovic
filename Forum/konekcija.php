@@ -10,6 +10,6 @@
       die("Connection failed: " . $conn->connect_error);
     }
     else{
-      echo "Uspesno povezano<br><br>";
+      //echo "Uspesno povezano<br><br>";
     }
 ?>

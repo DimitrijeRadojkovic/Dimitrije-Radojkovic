@@ -58,7 +58,7 @@
                     }
                   } else {
                     $button = "<a href=registracija.php>Registruj se</a>";
-                    echo "0 results";
+                    $passwordgreska = "Nalog sa ovim mejlom ne postoji";
                 }
             }
         } 
