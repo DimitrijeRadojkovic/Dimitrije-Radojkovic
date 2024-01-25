@@ -1,9 +1,12 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registracija</title>
 </head>
 <body>
 
@@ -59,10 +62,15 @@
 
             if(empty($emailgreska) && empty($usernamegreska) && empty($passwordgreska) && empty($repeat_passwordgreska)){
                 $date = date("Y-m-d H:i:s");
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                 $sql = "INSERT INTO korisnici
-                        VALUES('$email', '$username', '$password', '$date')";
+                        VALUES('$email', '$username', '$hashed_password', '$date')";
                 if($conn->query($sql) === TRUE){
                     echo "Uneto u bazu";
+                    $_SESSION["user"] = array(
+                        "email" => $email,
+                        "username" => $username,
+                    );
                 }
                 else{
                     echo "Greska pri unosu u bazu";
@@ -90,5 +98,6 @@
 
         <input type="submit" value="Registruj se">
     </form>
+    <a href="login.php">Vec imas nalog? Prijavi se</a>
 </body>
 </html>

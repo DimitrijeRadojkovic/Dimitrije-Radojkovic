@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prijava</title>
 </head>
 <body>
 
@@ -45,15 +45,19 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
-                        if($row["password"] == $password){
-                            $_SESSION["user"] = $row;
+                        if(password_verify($password, $row["password"])){
+                            $_SESSION["user"] = array(
+                                "email" => $row["email"],
+                                "username" => $row["username"],
+                            );
                             header('Location:http://www.dimitrijeradojkovic.com/Forum/index.php');
                         }
                         else{
-                            $button = "<a href=registracija.php>Registruj se</a>";
+                            $passwordgreska = "Lozinka nije tacna!";
                         }
                     }
                   } else {
+                    $button = "<a href=registracija.php>Registruj se</a>";
                     echo "0 results";
                 }
             }
