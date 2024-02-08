@@ -54,7 +54,16 @@
         echo "<h1>" . $tema["naziv"] . "</h1>";
         echo "<p style='font-size:15px'>" . $username . "<br>" . $tema["vreme_unosa"] . "</p>";
         echo "<p>" . $tema["opis"] . "</p>";
-        echo "</div>"; 
+        echo "</div>";
+        
+        echo "<div class='d-flex flex-column align-items-start m-3 bg-success rounded text-light'>";
+        echo "<h1>Komentari:</h1>";
+        echo "<form method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>";
+        echo "<textarea name='opis' rows='4' cols='50'></textarea><br>";
+        echo "<input type='submit' name='submit' value='Posalji'>";
+        echo "</form>";
+        
+        
     ?>
 </body>
 </html>
