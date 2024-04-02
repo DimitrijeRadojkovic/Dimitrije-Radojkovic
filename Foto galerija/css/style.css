@@ -1,0 +1,66 @@
+body{
+    background-color: #B4D9EB;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.naslov{
+    margin-left: 30px;
+    color: #2B5480;
+}
+header{
+    width: 100%;
+}
+nav{
+    display: flex;
+    background-color: #2B5480;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+nav a{
+    padding: 20px;
+}
+nav a:hover{
+    background-color: #82B7D0;
+    color: black;
+}
+nav a div{
+    height: 100%;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #EBFAF5;
+}
+#sredina{
+    border-left: 1px solid #F2F5F7;
+    border-right: 1px solid #F2F5F7;
+}
+#levo{
+    border-right: 1px solid #F2F5F7;
+}
+main{
+    width: 640px;
+    height: 640px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: black;
+}
+#opis{
+    overflow-y: scroll;
+    background-color: hsl(211, 50%, 34%);
+}
+#mini{
+    display: flex;
+}
+#mini img{
+    flex-grow: 1;
+    border: 1px solid beige;
+}
+#Oautoru{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
