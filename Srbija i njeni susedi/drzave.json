@@ -1,0 +1,47 @@
+{
+    "srbija": {
+        "glavni_grad": "Beograd",
+        "br_stanovnika": "6.945 mil",
+        "povrsina": "88,361"
+    },
+    "madjarska": {
+        "glavni_grad": "Budimpesta",
+        "br_stanovnika": "9.597 mil",
+        "povrsina": "93,030"
+    },
+    "hrvatska": {
+        "glavni_grad": "Zagreb",
+        "br_stanovnika": "3.871 mil",
+        "povrsina": "56,594"
+    },
+    "bosna": {
+        "glavni_grad": "Sarajevo",
+        "br_stanovnika": "3.475 mil",
+        "povrsina": "51,229"
+    },
+    "crnagora": {
+        "glavni_grad": "Podgorica",
+        "br_stanovnika": "0.63 mil",
+        "povrsina": "13,812"
+    },
+    "albanija": {
+        "glavni_grad": "Tirana",
+        "br_stanovnika": "2.831 mil",
+        "povrsina": "28,748"
+    },
+    "makedonija": {
+        "glavni_grad": "Skoplje",
+        "br_stanovnika": "1.836 mil",
+        "povrsina": "25,713"
+    },
+    "bugarska": {
+        "glavni_grad": "Sofija",
+        "br_stanovnika": "6.863 mil",
+        "povrsina": "110,993"
+    },
+    "rumunija": {
+        "glavni_grad": "Bukurest",
+        "br_stanovnika": "19.053 mil",
+        "povrsina": "238,391"
+    }
+}

@@ -63,3 +63,47 @@ footer{
    align-items: center;
    color: #CBE491;
 }
+.drzava{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: #487F2E;
+}
+#srbija{
+    top: 50%;
+    left: 47%;
+}
+#bosna{
+    top: 45%; 
+    left: 30%;
+}
+#hrvatska{
+    top: 15%; 
+    left: 33%;
+}
+#crnagora{
+    top: 70%; 
+    left: 35%;
+}
+#albanija{
+    top: 85%;
+    left: 40%;
+}
+#makedonija{
+    top: 90%;
+    left: 50%;
+}
+#bugarska{
+    top: 70%;
+    left: 60%;
+}
+#rumunija{
+    top: 20%;
+    left: 60%;
+}
+#madjarska{
+    top: 0;
+    left: 35%;
+}

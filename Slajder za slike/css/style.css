@@ -1,0 +1,113 @@
+body{
+    background-color: #FEFA99;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    color: #537938;
+    text-transform: uppercase;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: #C4FEA9;
+    height: 50px;
+}
+nav a{
+    text-decoration: none;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #487F2E;
+}
+nav a:hover{
+    color: #CBE491;
+    background-color: #487F2E;
+}
+h3{
+    color: #487F2E;
+    text-align: center;
+}
+.map{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+#pikaso{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    text-shadow: 0px 0px 6px #000000;
+    font-size: 60px;
+    letter-spacing: 20px;
+    text-align: center;
+    padding-left: 100px;
+    height: 100%;
+}
+footer{
+   background-color: #487F2E;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #CBE491;
+}
+#slike-container{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#slike{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.slikeOpisi{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+#opisi{
+    width: 60%;
+    height: 80%;
+    background-color: #C4FEA9;
+}
+#opisi div h2{
+    color: #689853;
+    text-align: center;
+    text-shadow: 0px 0px 15px #000000;
+}
+#opisi div h1{
+    color: #7C9073;
+    text-align: center;
+}
+#opisi div p{
+    text-align: center;
+    padding: 10px;
+}
+#slike img{
+    height: 80%;
+    width: 100%;
+}
+#kruzici{
+    display: flex;
+    justify-content: center;
+}
+.krug{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 10px;
+}
+.active{
+    background-color: green;
+}
